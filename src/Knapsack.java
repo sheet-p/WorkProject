@@ -6,24 +6,22 @@ public class Knapsack {
      weight capacity of the knapsack, the weights of individual items, the value of those individual items.
      */
     public static void main(String[] args) {
-        int weight[] ={1, 3, 4, 5}, val[]= {1, 4, 5, 7}, W = 0;
+        int weight[] ={1, 3, 4, 5}, val[]= {1, 4, 5, 7}, W = 7;
         int len = val.length;
-        System.out.println(knapsack(weight, val, W, len));
+        System.out.println(knapsack(weight, val, W, len-1));
     }
 
     public static int knapsack(int[] weight, int[] val, int W, int len) {
-        int maxPrice[][] = new int [len][W];
-        Arrays.fill(maxPrice, -1);
+        int maxPrice[][] = new int [len+1][W];
+        //Arrays.fill(maxPrice, -1);
         if(len==0 || W==0)
             return 0;
-        if(maxPrice[len][W] != -1)
+        if(maxPrice[len][W] != 0)
             return maxPrice[len][W];
         if(val[len-1] > W) {
             return maxPrice[len][W] = knapsack(weight, val, W, len-1);
         }
-
-
-            return maxPrice[len][W] = Math.max(val[len-1] + knapsack(weight, val, W-val[len-1], len-1) ,
+        return maxPrice[len][W] = Math.max(val[len-1] + knapsack(weight, val, W-val[len-1], len-1) ,
                                                     knapsack(weight, val, W, len-1))  ;
 
 
