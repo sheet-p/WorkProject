@@ -21,6 +21,22 @@ public class EqualSumPartition {
     }
 
     private static boolean knapsack(int[] arr, int n, int sum) {
+        boolean[][] memo = new boolean[n+1][sum+1];
+        for(int j=0; j<sum+1; j++)
+            memo[0][j] = false;
+        for(int i=0; i<n+1; i++)
+            memo[i][0] = true;
 
+        //choice diagram conditions
+        for(int i=1; i<n+1; i++) {
+            for(int j=1; j<sum+1; j++) {
+                if(arr[i-1] <= j)
+                    memo[i][j] = memo[i-1][j-arr[i-1]] || memo[i-1][j];
+                else
+                    memo[i][j] = memo[i-1][j];
+            }
+        }
+
+        return memo[n][sum];
     }
 }
