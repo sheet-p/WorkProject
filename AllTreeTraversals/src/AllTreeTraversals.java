@@ -10,30 +10,38 @@ public class AllTreeTraversals {
         Stack<Tree> stack = new Stack<>();
         Tree curr = root;
         if(curr == null) {
-            System.out.println("Null Tree");
+            System.out.println("");
             return ;
         }
-
-        System.out.println("InOrder Traversal : ");
-        while(stack!=null || stack.size()>0) {
-            if(curr != null) {
-                stack.push(curr);
-                curr = curr.left;
-            }
-            else {
-                curr = stack.pop();
-                System.out.print(curr.val + " ");
-                curr = curr.right;
-            }
-        }
+        inOrder(curr.left);
+        System.out.print(curr.val + " ");
+        inOrder(curr.right);
     }
 
     public void preOrder(Tree root) {
+        Stack<Tree> stack = new Stack<>();
+        Tree curr = root;
+        if(root == null) {
+            System.out.println("");
+            return ;
+        }
 
+        System.out.print(curr.val + " ");
+        preOrder(curr.left);
+        preOrder(curr.right);
     }
 
     public void postOrder(Tree root) {
-        
+        Stack<Tree> stack = new Stack<>();
+        Tree curr = root;
+        if(root == null) {
+            System.out.println("");
+            return ;
+        }
+
+        postOrder(curr.left);
+        postOrder(curr.right);
+        System.out.print(curr.val + " ");
     }
 
     public static void main(String[] args) {
@@ -43,12 +51,15 @@ public class AllTreeTraversals {
         tree.root.right = new Tree(3);
         tree.root.left.left = new Tree(4);
         tree.root.left.right = new Tree(5);
-
+        System.out.println("Traversals ");
         //inOrder
+        System.out.println("InOrder Traversal : ");
         tree.inOrder(tree.root);
         //preOrder
+        System.out.println("PreOrder Traversal : ");
         tree.preOrder(tree.root);
         //postOrder
+        System.out.println("PostOrder Traversal : ");
         tree.postOrder(tree.root);
     }
 }
