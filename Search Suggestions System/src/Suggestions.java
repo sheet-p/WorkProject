@@ -7,11 +7,13 @@ public class Suggestions {
     public static void main(String[] args) {
         String[] products = {"mobile", "mouse", "moneypot", "monitor", "mousepad"};
         String searchWord = "mouse";
-        String reg = "[]?";
+        String reg = "[]{1}.*";
         int counter = 0;
         StringBuilder regex = new StringBuilder();
-        List<List<String>> result = new ArrayList<>();
-
+        ArrayList<ArrayList<String>> result = new ArrayList<>();
+        //allocating memory
+        for(int i=0; i<searchWord.length(); i++)
+            result.add(new ArrayList<>());
         Arrays.sort(products);
         for (int i = 1; i <= searchWord.length(); i++) {
             counter = 0;
@@ -28,5 +30,6 @@ public class Suggestions {
             regex = new StringBuilder();
         }
         System.out.println(result);
+        //System.out.println(Pattern.matches("[m]{1}.*", "mouse"));
     }
 }
