@@ -13,7 +13,6 @@ public class Range {
         b = input.nextInt();
         int search  = input.nextInt();
         createRange(a, b);
-        
         System.out.println(isInRange(a,b,search));
     }
 
