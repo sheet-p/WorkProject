@@ -7,7 +7,7 @@ public class Suggestions {
     public static void main(String[] args) {
         String[] products = {"mobile", "mouse", "moneypot", "monitor", "mousepad"};
         String searchWord = "mouse";
-        String reg = "[]{1}.*";
+        String reg = "{1}.*";
         int counter = 0;
         StringBuilder regex = new StringBuilder();
         ArrayList<ArrayList<String>> result = new ArrayList<>();
@@ -18,7 +18,7 @@ public class Suggestions {
         for (int i = 1; i <= searchWord.length(); i++) {
             counter = 0;
             regex.append(reg);
-            regex.insert(1, searchWord.substring(0, i));
+            regex.insert(0, searchWord.substring(0, i));  //searchWord.substring(0, i)
             for (String prod : products) {
                 if (Pattern.matches(regex.toString(), prod)) {
                     if (counter != 3) {
@@ -30,6 +30,6 @@ public class Suggestions {
             regex = new StringBuilder();
         }
         System.out.println(result);
-        //System.out.println(Pattern.matches("[m]{1}.*", "mouse"));
+        //System.out.println(Pattern.matches("mos{1}.+", "mouse"));
     }
 }
