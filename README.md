@@ -1,1 +1,1 @@
-# WorkProject
+# LeetCode Solutions
