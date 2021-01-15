@@ -18,7 +18,7 @@ public class DefectiveNode {
 
     private static boolean isDefective(Tree root, Set<Tree> visited) {
         if(root == null)
-            return ;
+            System.exit(0);
         if(! visited.add(root))
             return false;
         visited.add(root);
