@@ -1,7 +1,8 @@
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
-
+//Consider a binary tree, where an arbitary node has 2 parents i.e two nodes in the tree
+// have the same child. Identify the defective node.
 public class DefectiveNode {
     public static void main(String[] args) {
         Tree root = new Tree(3);
