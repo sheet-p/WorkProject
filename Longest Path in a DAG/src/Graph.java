@@ -7,6 +7,8 @@ public class Graph {
     int V;
     //adjacency list
     ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+    //toological order
+    List<Integer> toporder = new ArrayList<>();
 
     Graph(int val) {
         this.V = val;
@@ -39,7 +41,7 @@ public class Graph {
         //counter for visited nodes
         int visited = 0;
         //for storing the topological order
-        List<Integer> toporder = new ArrayList<>();
+
         while(! q.isEmpty()) {
             int u = q.poll();
             toporder.add(u);
@@ -57,7 +59,5 @@ public class Graph {
             System.out.println("Cycle exists");
             System.exit(0);
         }
-        for(int i : toporder)
-            System.out.println(i);
     }
 }
