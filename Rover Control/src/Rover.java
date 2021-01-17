@@ -41,7 +41,6 @@ public class Rover {
     //Constraints
     //2 <= n <= 20
     //1 <= |cmds| <= 20
-    int[][] dir = {{0,-1}, {0,1}, {0, -1}, {0,1}};
     public static void main(String[] args) {
         int n = 4;
         String[] cmds = {"RIGHT", "UP", "DOWN", "LEFT", "DOWN", "DOWN"};
