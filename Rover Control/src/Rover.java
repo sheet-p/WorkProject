@@ -41,7 +41,42 @@ public class Rover {
     //Constraints
     //2 <= n <= 20
     //1 <= |cmds| <= 20
+    int[][] dir = {{0,-1}, {0,1}, {0, -1}, {0,1}};
     public static void main(String[] args) {
+        int n = 4;
+        String[] cmds = {"RIGHT", "UP", "DOWN", "LEFT", "DOWN", "DOWN"};
+        System.out.println(roverMove(n, cmds));
+    }
 
+    private static int roverMove(int n, String[] cmds) {
+        //initialize and fill array
+        int[][] arr = new int[n][n];
+        int num = 0;
+        for(int i=0; i<n; i++) {
+            for(int j=0; j<n; j++)
+                arr[i][j] = num++;
+        }
+        int r = 0, c = 0;
+        for(String direction : cmds) {
+            switch(direction.charAt(0)) {
+                case 'L' : c += -1;
+                           if(r<0 || r>=n || c<0 || c>=n)
+                               c = c+1;
+                               break;
+                case 'R' : c += 1;
+                           if(r<0 || r>=n || c<0 || c>=n)
+                               c = c-1;
+                           break;
+                case 'U' : r += -1;
+                           if(r<0 || r>=n || c<0 || c>=n)
+                               r = r+1;
+                           break;
+                case 'D' : r += 1;
+                           if(r<0 || r>=n || c<0 || c>=n)
+                              r = r+1;
+                           break;
+            }
+        }
+        return arr[r][c];
     }
 }
