@@ -5,8 +5,10 @@ public class TopDown {
 //A subsequence is a sequence that appears in the same relative order, but not necessarily contiguous.
 //
 //For example, “abc”,  “abg”, “bdf”, “aeg”,  ‘”acefg”, .. etc are subsequences of “abcdefg”.
-    static int[][] memo = new int[10][10];
-    public class LongestCommonSubseq {
+
+
+        static int[][] memo = new int[10][10];
+
         public static void main(String[] args) {
             String x = "abcdefgh", y="abcryghjk";
             //inititalization of memo
@@ -28,6 +30,6 @@ public class TopDown {
                 return memo[m][n] = Math.max(longest(x,y,m-1,n) , longest(x,y,m,n-1));
             }
         }
-    }
+
 
 }
