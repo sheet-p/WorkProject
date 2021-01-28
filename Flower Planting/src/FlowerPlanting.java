@@ -32,7 +32,7 @@ public class FlowerPlanting {
                 flowers[result[neighbor]] = 1;      //marking the color as used for all neighbors
             }
 
-            //now use a flower that hasnt been used
+            //now use a flower that hasn't been used
             for (int c = 4; c >= 1; c--){
                 if (flowers[c] != 1) //colors[c] == 0 => the color has not been used yet,
                     result[i] = c; //so let's use that one
