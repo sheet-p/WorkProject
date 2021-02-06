@@ -10,8 +10,8 @@ public class UF {
                            {0, 0, 1, 0},
                            {0, 0, 0, 1} ,
                            {0, 0, 0, 0} };
-        Grapg g = new Graph(V, E);
-        if(isCycle(g))
+        Graph g = new Graph(V, E);
+        if(g.isCycle(graph))
             System.out.println("Cycle Exists!");
         else
             System.out.println("No Cycle!");
