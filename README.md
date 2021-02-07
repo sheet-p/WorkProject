@@ -1,1 +1,1 @@
-# LeetCode Solutions
+# Frequent Data Structure Problems
