@@ -7,7 +7,7 @@ public class Trie {
 
     Trie() {
         for(int i=0; i<26; i++) {
-            this.children[i] = new Trie();
+            this.children[i] = null;
         }
         endOfWord = false;
     }
