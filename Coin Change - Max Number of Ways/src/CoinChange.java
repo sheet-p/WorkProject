@@ -5,7 +5,7 @@
 public class CoinChange {
     public static void main(String[] args) {
         int coin[]={1,2,3}, N=4;
-        System.out.println(change(coin, coin.length, N));
+        System.out.println(change(coin, coin.length-1, N));
     }
 
     private static int change(int[] coin, int n, int sum) {
