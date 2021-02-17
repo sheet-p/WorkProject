@@ -4,7 +4,7 @@
 //for N = 4 and S = {1,2,3}, there are four solutions: {1,1,1,1},{1,1,2},{2,2},{1,3}. So output should be 4.
 public class CoinChange {
     public static void main(String[] args) {
-        int coin[]={1,2,3}, N=4;
+        int coin[]={1,2,3}, N=5;
         System.out.println(change(coin, coin.length, N));
     }
 
