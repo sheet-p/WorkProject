@@ -5,15 +5,17 @@
 public class CoinChange {
     public static void main(String[] args) {
         int coin[]={1,2,3}, N=4;
-        System.out.println(change(coin, coin.length-1, N));
+        System.out.println(change(coin, coin.length, N));
     }
 
     private static int change(int[] coin, int n, int sum) {
         if(sum==0)
             return 1;
-        if(n==0)
+        if(sum < 0)
+            return 0;
+        if(n<=0 && sum>=1)
             return 0;
         //either include it or you dont
-        return change(coin, n, sum-coin[n]) + change(coin, n-1, sum);
+        return change(coin, n, sum-coin[n-1]) + change(coin, n-1, sum);
     }
 }
