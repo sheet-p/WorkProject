@@ -13,6 +13,7 @@ public class CoinChange {
             return 1;
         if(n==0)
             return 0;
+        //either include it or you dont
         return change(coin, n, sum-coin[n]) + change(coin, n-1, sum);
     }
 }
