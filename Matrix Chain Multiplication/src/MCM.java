@@ -1,6 +1,13 @@
 //Matrix Chain Multiplication using Recursion
 // Given a sequence of matrices, find the most efficient way to multiply these matrices together. The problem
 // is not actually to  perform the multiplications, but merely to decide in which order to perform the multiplications.
+
+
+//Efficiently performing cost calc of matrix multiplication is as belows :
+//      A1=a*b      A2=b*c
+//      effective cost of A1*A2 = a*b*c
+
+
 //https://www.geeksforgeeks.org/matrix-chain-multiplication-dp-8/
 //LeetCode - Balloon Burst
 public class MCM {
