@@ -6,9 +6,7 @@ public class Trie {
     Trie children[];
 
     Trie() {
-        for(int i=0; i<26; i++) {
-            this.children[i] = null;
-        }
+        children = new Trie[26];
         endOfWord = false;
     }
 }
