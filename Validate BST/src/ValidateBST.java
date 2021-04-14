@@ -18,7 +18,7 @@ public class ValidateBST {
     private static boolean isBST(Tree root, int min, int max) {
         if(root == null)
             return true;
-        if( (min!=-1 && root.data<=min) && (max!=-1 && root.data>=max) )
+        if( (min!=-1 && root.data<=min) || (max!=-1 && root.data>=max) )
             return false;
         return isBST(root.left, min, root.data) && isBST(root.right, root.data, max);
     }
