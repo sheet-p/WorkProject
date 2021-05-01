@@ -6,9 +6,9 @@ public class Comparator {
 
             @Override
             public int compare(Integer lhs, Integer rhs) {
-                if(rhs < lhs)
+                if(lhs < rhs)
                     return 1;
-                else if(rhs > lhs)
+                else if(lhs > rhs)
                     return -1;
                 else
                     return 0;
