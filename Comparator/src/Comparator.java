@@ -4,6 +4,7 @@ public class Comparator {
     public static void main(String[] args) {
         PriorityQueue<Integer> pq = new PriorityQueue<>(new java.util.Comparator<Integer>() {
 
+            //priority queue will have integers sorted from -1 to 1
             @Override
             public int compare(Integer lhs, Integer rhs) {
                 if(lhs < rhs)
