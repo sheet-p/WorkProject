@@ -15,10 +15,24 @@ public class alphabetBoard {
             if(ch == 'Z') {
                 ch = 'U';
             }
-            //row co-ordinate
+            //x co-ordinate
             int x = (ch - 65) % 5 ;
+            // y co-ordinate
             int y = (ch - 65) / 5;
 
+            //finding target y coordinate
+            if(curry < y) {
+                int diff = y - curry;
+                for(int i=0; i<diff; i++)
+                    System.out.print("D");
+            }
+            else {
+                int diff = curry - y;
+                for(int i=0; i<diff; i++)
+                    System.out.print("U");
+            }
+
+            //finding target x coordinate
             if(currx < x) {
                 int diff = x - currx;
                 for(int i=0; i<diff; i++)
@@ -29,17 +43,6 @@ public class alphabetBoard {
                 int diff = currx - x;
                 for(int i=0; i<diff; i++)
                     System.out.print("L");
-            }
-
-            if(curry < y) {
-                int diff = y - curry;
-                for(int i=0; i<diff; i++)
-                    System.out.print("D");
-            }
-            else {
-                int diff = curry - y;
-                for(int i=0; i<diff; i++)
-                    System.out.print("U");
             }
             currx = x;
             curry = y;
