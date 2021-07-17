@@ -26,6 +26,6 @@ public class BoundedRobot {
         }
 
         //robot returns to initial position or robot doesnt face north
-        return ( (x==0 && y==0) || ! (pos!=0) );
+        return ( (x==0 && y==0) ||  (pos!=0) );
     }
 }
