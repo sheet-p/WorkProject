@@ -1,5 +1,9 @@
 //Time complexity is O(n.log n)
 //MAx heap
+
+//Steps for heap sort:
+//1. make a maxheap
+//2. delete all elements from max heap
 public class HeapSort {
     public static void main(String[] args) {
         int[] A = {2,6,4,8,1,3};
